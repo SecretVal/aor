@@ -1,4 +1,4 @@
-use crate::shared::Day;
+use crate::shared::*;
 
 pub struct Day1 {
     pub(crate) left: Vec<usize>,
@@ -37,11 +37,7 @@ impl Day for Day1 {
         for i in 0..len {
             let left = self.left[i];
             let right = self.right[i];
-            if left > right {
-                sum += left - right;
-            } else {
-                sum += right - left;
-            }
+            sum += diff(left, right);
         }
         return sum;
     }
