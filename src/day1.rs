@@ -30,7 +30,7 @@ impl Day for Day1 {
         return d1;
     }
 
-    fn solve(&mut self) -> Self::Res {
+    fn solve_part1(&mut self) -> Self::Res {
         assert_eq!(self.left.len(), self.right.len());
         let len = self.left.len();
         let mut sum: usize = 0;
@@ -42,6 +42,23 @@ impl Day for Day1 {
             } else {
                 sum += right - left;
             }
+        }
+        return sum;
+    }
+
+    fn solve_part2(&mut self) -> Self::Res {
+        assert_eq!(self.left.len(), self.right.len());
+        let len = self.left.len();
+        let mut sum: usize = 0;
+        for i in 0..len {
+            let num: usize = self.left[i];
+            let mut count: usize = 0;
+            for j in 0..len {
+                if self.right[j] == num {
+                    count += 1;
+                }
+            }
+            sum += num * count;
         }
         return sum;
     }

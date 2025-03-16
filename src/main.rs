@@ -22,7 +22,8 @@ fn main() {
     match args.day {
         1 => {
             let mut day1 = Day1::parse_input(input_content);
-            println!("Solved: {}", day1.solve())
+            println!("Part1: {}", day1.solve_part1());
+            println!("Part2: {}", day1.solve_part2());
         }
         _ => {
             exit(1);
