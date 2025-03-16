@@ -2,8 +2,12 @@
 
 pub mod shared;
 use shared::Day;
+
 pub mod day1;
 use day1::Day1;
+
+pub mod day2;
+use day2::Day2;
 
 use clap::Parser;
 use std::process::exit;
@@ -22,8 +26,13 @@ fn main() {
     match args.day {
         1 => {
             let mut day1 = Day1::parse_input(input_content);
-            println!("Part1: {}", day1.solve_part1());
-            println!("Part2: {}", day1.solve_part2());
+            println!("Part 1: {}", day1.solve_part1());
+            println!("Part 2: {}", day1.solve_part2());
+        }
+        2 => {
+            let mut day2 = Day2::parse_input(input_content);
+            println!("Part 1: {}", day2.solve_part1());
+            println!("Part 2: {}", day2.solve_part2());
         }
         _ => {
             exit(1);

@@ -14,7 +14,7 @@ impl Day for Day1 {
         };
         let lines: Vec<&str> = str.split("\n").collect();
         for line in lines {
-            let mut nums: Vec<usize> = line.split("   ")
+            let nums: Vec<usize> = line.split("   ")
                 .collect::<Vec<&str>>()
                 .into_iter()
                 .filter(|x| !x.is_empty())
